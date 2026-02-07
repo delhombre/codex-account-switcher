@@ -1,6 +1,6 @@
 # Binaries
 bin/
-cxa
+/cxa
 
 # Go
 *.exe

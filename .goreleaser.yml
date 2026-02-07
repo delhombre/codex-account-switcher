@@ -44,7 +44,8 @@ brews:
     repository:
       owner: delhombre
       name: homebrew-tap
-    homepage: https://github.com/delhombre/cxa
+    directory: Formula
+    homepage: https://github.com/delhombre/codex-account-switcher
     description: Fast, beautiful CLI to manage multiple Codex CLI accounts
     license: MIT
     install: |

@@ -115,18 +115,7 @@ func (r *DirectoryRepository) Save(name string) (*account.Account, error) {
 		UpdatedAt: time.Now(),
 	}
 
-	// Try to read email from auth.json
-	authPath := filepath.Join(accountPath, "auth.json")
-	if authData, err := os.ReadFile(authPath); err == nil {
-		var authInfo struct {
-			Tokens struct {
-				IDToken string `json:"id_token"`
-			} `json:"tokens"`
-		}
-		if json.Unmarshal(authData, &authInfo) == nil {
-			// Could parse JWT to get email, simplified for now
-		}
-	}
+	// Note: Email extraction from auth.json JWT could be added here
 
 	// Save metadata
 	metaPath := filepath.Join(accountPath, ".account.json")

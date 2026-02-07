@@ -1,4 +1,4 @@
-# CXA - Codex Account Switcher 🔄
+# CXA - Codex Account Switcher
 
 **A fast, beautiful CLI to manage multiple OpenAI Codex accounts.**
 
@@ -7,16 +7,16 @@
 
 ---
 
-## ✨ Features
+## Features
 
-- **⚡ Instant switching** — Directory-based storage (no zip/unzip delays)
-- **🎨 Beautiful TUI** — Interactive interface powered by [Charm](https://charm.sh)
-- **🔐 Secure** — Authentication stays isolated per account
-- **📋 Simple commands** — `cxa switch bruno` and you're done
+- **Instant switching** — Directory-based storage (no zip/unzip delays)
+- **Beautiful TUI** — Interactive interface powered by [Charm](https://charm.sh)
+- **Session sharing** — Share threads and history between accounts
+- **Secure** — Authentication stays isolated per account
 
 ---
 
-## 📦 Installation
+## Installation
 
 ### Homebrew (macOS/Linux)
 
@@ -40,7 +40,7 @@ make install
 
 ---
 
-## 🚀 Quick Start
+## Quick Start
 
 ```bash
 # Save your current account
@@ -59,7 +59,7 @@ cxa
 
 ---
 
-## 📖 Commands
+## Commands
 
 | Command             | Description                     |
 | ------------------- | ------------------------------- |
@@ -68,6 +68,8 @@ cxa
 | `cxa switch <name>` | Switch to an account            |
 | `cxa save <name>`   | Save current session as account |
 | `cxa current`       | Show active account             |
+| `cxa share enable`  | Enable session sharing          |
+| `cxa share status`  | Show sharing configuration      |
 | `cxa version`       | Print version                   |
 
 ### Aliases
@@ -78,11 +80,11 @@ cxa
 
 ---
 
-## 🎨 TUI Preview
+## TUI Preview
 
 ```
 ╭──────────────────────────────────────────╮
-│  🔄 Codex Accounts                       │
+│  Codex Accounts                          │
 ├──────────────────────────────────────────┤
 │  ● bruno          (current)              │
 │  ○ work                                  │
@@ -94,17 +96,30 @@ cxa
 
 ---
 
-## 📁 Data Locations
+## Session Sharing
+
+Share sessions, threads, and history between accounts while keeping authentication separate.
+
+```bash
+cxa share enable   # Enable global sharing
+cxa share status   # View current configuration
+cxa share disable  # Disable sharing
+```
+
+---
+
+## Data Locations
 
 | Path                           | Purpose                           |
 | ------------------------------ | --------------------------------- |
 | `~/.codex`                     | Active Codex session              |
 | `~/codex-data/accounts/<name>` | Saved account data                |
+| `~/codex-data/shared/`         | Shared sessions and threads       |
 | `~/.codex-switch/state.json`   | Current/previous account tracking |
 
 ---
 
-## 🛠 Development
+## Development
 
 ```bash
 # Run in dev mode
@@ -122,7 +137,7 @@ make install
 
 ---
 
-## 🙏 Credits
+## Credits
 
 Inspired by [bashar94/codex-cli-account-switcher](https://github.com/bashar94/codex-cli-account-switcher).
 
@@ -134,6 +149,6 @@ Built with [Charm](https://charm.sh) libraries:
 
 ---
 
-## 📄 License
+## License
 
 MIT License — see [LICENSE](LICENSE)
